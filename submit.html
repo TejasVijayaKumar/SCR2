@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Chikmagalur Travel Recommendations</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           background-color: #f4f4f4;
+           margin: 0;
+           padding: 20px;
+       }
+       h1 {
+           color: #333;
+       }
+       .destination {
+           background: white;
+           border-radius: 5px;
+           padding: 15px;
+           margin: 10px 0;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+       }
+       img {
+           max-width: 100%;
+           border-radius: 5px;
+       }
+       .rating {
+           color: #ffcc00;
+       }
+   </style>
+</head>
+<body>
+
+<h1>Review our recommendations for your trip</h1>
+<h2>Chikmagalur</h2>
+<p>Going solo. December. 2 days</p>
+
+<div class="destination">
+   <h3>Enchanting Escapes in Kudremukh National Park</h3>
+   <p>Discover the breathtaking allure of Kudremukh National Park and the captivating Jhari Waterfalls, where adventure meets tranquility.</p>
+   <div>
+       <div>
+           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/8c/d0/a0/view.jpg?w=1200&h=-1&s=1" alt="Kudremukh National Park">
+           <h4>Kudremukh National Park</h4>
+           <p class="rating">Rating: ●●●● 101</p>
+           <p>Category: National Parks</p>
+       </div>
+       <div>
+           <img src="https://i.imgur.com/Lh54w5B.png" alt="Jhari Waterfalls">
+           <h4>Jhari Waterfalls</h4>
+           <p class="rating">Rating: ●●●● 177</p>
+           <p>Category: Waterfalls</p>
+       </div>
+   </div>
+</div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+       const ratings = document.querySelectorAll('.rating');
+       ratings.forEach(rating => {
+           rating.addEventListener('click', function() {
+               alert('You clicked on the rating!');
+           });
+       });
+   });
+</script>
+
+</body>
+</html>

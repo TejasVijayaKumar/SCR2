@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bangalore Tourist Places</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <style>
+        /* CSS to align map to the right */
+        body {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #map {
+            height: 600px;
+            width: 500px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map, centered around Bangalore
+        var map = L.map('map').setView([12.9716, 77.5946], 13);  // Coordinates for Bangalore
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Tourist spots in Bangalore (latitude, longitude)
+        var touristSpots = [
+            { name: "Vidyarthi Bhavan", coords: [12.9450,77.5715] },
+            { name: "By 2 Coffee-Bhojana Shaale", coords: [12.9595,77.5330] },
+            { name: "MTR,Lalbagh", coords: [12.9508, 77.5849] },
+            { name: "Doddh Ganapathi Teple", coords: [12.9417, 77.5685] },
+            { name: "Lalbagh", coords: [12.9507, 77.5848] },
+            { name: "VV Puram Food Street", coords: [12.9513, 77.5776] },
+            { name: "MG Road", coords: [12.9749, 77.6120] },
+            { name: "Cubbon Park", coords: [12.9750, 77.5933]}
+
+        ];
+
+        // Add markers for each tourist spot
+        touristSpots.forEach(function(spot) {
+            L.marker(spot.coords)
+                .addTo(map)
+                .bindPopup("<b>" + spot.name + "</b>")
+                .openPopup();
+        });
+
+        // Define start and end points for the route (just as an example)
+        var startCoords = [12.9982, 77.5902];  // Bangalore Palace
+        var endCoords = [12.9756, 77.5955];    // Cubbon Park
+
+        // Add a routing control (line between start and end points)
+        // L.Routing.control({
+        //    waypoints: [
+        //        L.latLng(startCoords[0], startCoords[1]),
+        //        L.latLng(endCoords[0], endCoords[1])
+        //    ],
+        //    routeWhileDragging: true
+        // }).addTo(map);
+    </script>
+</body>
+</html>

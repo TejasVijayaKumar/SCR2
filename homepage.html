@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner</title>
+  <style>
+    body {
+      font-family: Cascadia Code ExtraLight, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .header {
+      
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .header p {
+      color: #555;
+    }
+
+    header {
+      
+    width: 100%;
+    background: #000000;
+    color: white;
+    padding: 20px ;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.destinations {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.destination-card img {
+    width: 100%;
+    height: auto;
+}
+
+.destination-card h3 {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #000000;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    .search-box {
+      margin: 1rem 0;
+    }
+
+    .search-box input {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .popular-destinations {
+      text-align: center;
+    }
+
+    .popular-destinations h2 {
+      margin: 1rem 0;
+      font-size: 1.25rem;
+    }
+
+    .destination-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .destination {
+      width: 150px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .destination img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .destination p {
+      margin: 0.5rem 0 0;
+    }
+
+    .powered-by {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Destination Designer</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  <!--<div class="powered-by">Powered by AI</div>-->
+  <div class="header">
+    <h2>First, where do you want to go?</h2>
+    <p>You'll get custom recs you can save and turn into an itinerary.</p>
+  </div>
+  <div class="search-box">
+    <input type="text" placeholder="Choose a city or town">
+  </div>
+  <div class="popular-destinations">
+    <h2>Or get started with a popular destination</h2>
+    <div class="destination-grid">
+      <div class="destination">
+        
+        <a href="index.html" >
+        <img src="https://deih43ym53wif.cloudfront.net/bangalore-india-shutterstock_662210488_ac0dd8543d.jpeg" alt="Bengaluru">
+      </a>
+        <p>Bengaluru</p>
+        <p>Karnataka</p>
+      </div>
+      <div class="destination">
+        <a href="index.html">
+        <img src="https://karnatakatourism.org/wp-content/uploads/2020/05/Udupi-2.jpg" alt="Mangaluru">
+      </a>
+        <p>Mangaluru</p>
+        <p>Karnataka</p>
+      </div>
+      <div class="destination">
+        <a href="index.html" >
+        <img src="https://i0.wp.com/img.paisawapas.com/ovz3vew9pw/2023/04/06173852/Rectangle-1Pithrody-Udyavara-Beach-in-udupi.png?resize=700%2C540&ssl=1" alt="Udupi">
+      </a>
+      <p>Udupi</p>
+        <p>Karnataka</p>
+      </div>
+     
+      
+      
+      <!--<div class="destination">
+        <img src="https://via.placeholder.com/150" alt="Varadero">
+        <p>Varadero</p>
+        <p>Caribbean</p>
+      </div>
+      <div class="destination">
+        <img src="https://via.placeholder.com/150" alt="Rome">
+        <p>Rome</p>
+        <p>Italy</p>
+      </div>
+      <div class="destination">
+        <img src="https://via.placeholder.com/150" alt="Hyderabad">
+        <p>Hyderabad</p>
+        <p>India</p>
+      </div>
+    -->
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Destination Designers. All rights reserved.</p>
+</footer>
+
+<script src="script0.js"></script>
+</body>
+</html>

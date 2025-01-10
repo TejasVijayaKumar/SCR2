@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests Selection</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Cascadia Code ExtraLight', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Interests Container */
+    .interests-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 20px;
+    }
+
+    /* Interest Button Styling */
+    .interest-button {
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: 500;
+      border: 2px solid #333;
+      border-radius: 25px;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .interest-button:hover {
+      background-color: #333;
+      color: white;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .interest-button.selected {
+      background-color: black;
+      color: white;
+      border-color: black;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Actions Section */
+    .actions {
+      margin: 40px 0;
+    }
+
+    .actions a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-right: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .actions a:hover {
+      color: #555;
+    }
+
+    .actions button {
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      background-color: #ddd;
+      color: #888;
+      cursor: not-allowed;
+      transition: all 0.3s ease;
+    }
+
+    .actions button.active {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .actions button.active:hover {
+      box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Tell us what you're interested in</h1>
+  <p>Select all that apply.</p>
+  <div class="interests-container">
+    <button class="interest-button">Must-see Attractions</button>
+    <button class="interest-button">Great Food</button>
+    <button class="interest-button">Hidden Gems</button>
+    <button class="interest-button">Ocean fun & eco adventures</button>
+    <button class="interest-button">Historic sights & bites</button>
+    <button class="interest-button">Go fishing with local pros</button>
+    <button class="interest-button">Historical Landmarks</button>
+    <button class="interest-button">Seafood Cuisine</button>
+    <button class="interest-button">Water Sport Adventures</button>
+    <button class="interest-button">Art Galleries</button>
+    <button class="interest-button">Island Life</button>
+    <button class="interest-button">Marina and Boat Tours</button>
+    <button class="interest-button">+ Add interest</button>
+  </div>
+  <div class="actions">
+    <a href="thirdpahe.html">Back</a>
+    <button class="submit-button"onclick="window.location.href='try.html'">Submit</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.interest-button');
+    const submitButton = document.querySelector('.submit-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('selected');
+        updateSubmitButtonState();
+      });
+    });
+
+    function updateSubmitButtonState() {
+      const hasSelection = Array.from(buttons).some(button =>
+        button.classList.contains('selected')
+      );
+      if (hasSelection) {
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+      } else {
+        submitButton.classList.remove('active');
+        submitButton.disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>
+
